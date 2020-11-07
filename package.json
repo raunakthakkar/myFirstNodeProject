@@ -1,0 +1,14 @@
+{
+  "name": "mynotenodeapp",
+  "version": "1.0.0",
+  "description": "my notes app",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "raunak",
+  "license": "ISC",
+  "dependencies": {
+    "yargs": "^16.1.0"
+  }
+}
