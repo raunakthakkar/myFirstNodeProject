@@ -30,8 +30,18 @@ if(readData.length>0){
     return ([])
 }
 }
+let removeNote=(title)=>{
+    let Notes=loadNotes()
+ if (Notes.length>0){
+for (let i=0;i<Notes.length;i++){
+   Notes.splice(Notes.findIndex((note)=>title in note),1)
+   fs.writeFileSync('mynotes.json',JSON.stringify(Notes))
+}
+ }else{console.log("Sorry there are no notes to remove")}
+}
 module.exports={
     "getNotes":getNotes,
     "addNotes":addNotes,
-    "readNotes":loadNotes
+    "readNotes":loadNotes,
+    "removeNote":removeNote,
 }

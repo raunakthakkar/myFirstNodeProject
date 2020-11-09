@@ -32,7 +32,7 @@ builder:{
 'type':'string'
     }
 },
-handler:()=>{notes.removeNote(argv.title)}
+handler:(argv)=>{notes.removeNote(argv.title)}
 }
 )
 //read command
