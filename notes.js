@@ -12,7 +12,7 @@ let duplicatedNotes=myNotesArray.filter((note)=>{
     return note.title===noteTitle
 })
 if(duplicatedNotes.length===0){
-    myNotesArray.push({"title":noteTitle,"body":body})
+    myNotesArray.push({[noteTitle]:body})
     fs.writeFileSync('mynotes.json',JSON.stringify(myNotesArray))
     console.log("Note Added")
 }else{
