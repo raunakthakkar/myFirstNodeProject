@@ -8,8 +8,11 @@ return("get Notes....")
 
 let addNotes=(noteTitle,body)=>{
 let myNotesArray=loadNotes()
+
 let duplicatedNotes=myNotesArray.filter((note)=>{
-    return note.title===noteTitle
+    if (noteTitle in note===true){
+        return true
+    }
 })
 if(duplicatedNotes.length===0){
     myNotesArray.push({[noteTitle]:body})
@@ -20,12 +23,12 @@ console.log("*******************************\n Ehhhh Duplicate Note Title\n*****
 }
 
 }
-let loadNotes=()=>{
+let loadNotes=(commandName)=>{
 let readData=fs.readFileSync('mynotes.json')//reading data from file
 readData=readData.toString()
 if(readData.length>0){
     
-    return ((JSON.parse(readData)))
+    if(commandName==="readAll"){console.log(JSON.parse(readData))}else{return((JSON.parse(readData)))}  
 }else{
     return ([])
 }

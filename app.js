@@ -38,8 +38,8 @@ handler:()=>{notes.removeNote(argv.title)}
 //read command
 yargs.command({
     command:"readAll",
-    handler:()=>{
-    notes.readNotes()
+    handler:(argv)=>{
+    notes.readNotes(argv._[0])
 }
 })
 
